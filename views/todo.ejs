@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single todo</title>
+</head>
+<body>
+    <h3>
+        <%= todo.task %>
+    </h3>
+    <p><%= todo.description %></p>
+    <!-- <input type="checkbox" <%= todo.isComplete && "checked" %> /> -->
+    <p>
+        <%= todo.isComplete %>
+            
+    </p>
+
+    <form action="/todos/<%= todo.id %>" method="POST">
+        <div>
+          <label for="">Task name</label>
+          <input name="task" type="text" value="<%= todo.task %>" />
+        </div>
+        <div>
+          <label for="">Description</label>
+          <input name="description" type="text" value="<%= todo.description %>" />
+        </div>
+        <div>
+          <label for="">Is completed</label>
+          <input name="isComplete" type="checkbox" checked="<%= todo.isComplete %>" />
+        </div>
+        <div>
+          <button>Update the todo!</button>
+        </div>
+      </form>
+</body>
+</html>
